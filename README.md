@@ -12,7 +12,7 @@ docker pull archont94/enemy-territory
 ```
 
 ``` bash
-docker run --name et-server -p 27960:27960/udp -p 27960:27960 archont94/enemy-territory:latest
+docker run -d --name et-server -p 27960:27960/udp -p 27960:27960 archont94/enemy-territory:latest
 ```
 
 In order to edit config files, log inside container with `docker exec -it CONTAINER_ID bash`. After that you can run `nano` editor and modify files.
@@ -36,7 +36,7 @@ You can add you own `server.cfg` (or any other file) by linking them as volumes 
 The complete command looks like this:
 
 ``` bash
-docker run --name et-server -p 27960:27960/udp -p 27960:27960 -v /path/to/your/server.cfg:/et/etpro/server.cfg archont94/enemy-territory:latest
+docker run -d --name et-server -p 27960:27960/udp -p 27960:27960 -v /path/to/your/server.cfg:/et/etpro/server.cfg archont94/enemy-territory:latest
 ```
 
 ### Example server.cfg
